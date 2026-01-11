@@ -25,10 +25,10 @@ export function Navigation() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex space-x-6">
             <span className="flex items-center gap-2">
-              <Phone className="h-3 w-3 text-primary" /> +30 2102482659
+              <Phone className="h-3 w-3 text-primary" /> +30 231000000
             </span>
             <span className="flex items-center gap-2">
-              <Mail className="h-3 w-3 text-primary" /> info@alkiepe.gr
+              <Mail className="h-3 w-3 text-primary" /> info@yannos.gr
             </span>
           </div>
           <div className="flex space-x-4">
@@ -39,32 +39,41 @@ export function Navigation() {
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
-           <div className="h-10 w-10 bg-primary flex items-center justify-center font-display font-bold text-white text-xl rounded-sm shadow-md group-hover:bg-primary/90 transition-colors">
-             A
-           </div>
-           <div className="flex flex-col">
-             <span className="font-display font-bold text-xl leading-none tracking-tight text-secondary">Yannos</span>
-             <span className="text-xs text-muted-foreground font-semibold tracking-widest">ASFALTIKA</span>
-           </div>
+          <div className="h-10 w-10 bg-primary flex items-center justify-center font-display font-bold text-white text-xl rounded-sm shadow-md group-hover:bg-primary/90 transition-colors">
+            A
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-bold text-xl leading-none tracking-tight text-secondary">
+              Yannos
+            </span>
+            <span className="text-xs text-muted-foreground font-semibold tracking-widest">
+              ASFALTIKA
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-1">
           {links.map((link) => (
-            <Link 
-              key={link.href} 
+            <Link
+              key={link.href}
               href={link.href}
               className={cn(
                 "px-4 py-2 text-sm font-medium transition-all duration-200 uppercase tracking-wide rounded-sm hover:text-primary",
-                location === link.href 
-                  ? "text-primary border-b-2 border-primary bg-primary/5" 
-                  : "text-secondary-foreground/80 hover:bg-muted"
+                location === link.href
+                  ? "text-primary border-b-2 border-primary bg-primary/5"
+                  : "text-secondary-foreground/80 hover:bg-muted",
               )}
             >
               {link.label}
             </Link>
           ))}
-          <Button variant="default" size="sm" className="ml-4 bg-primary hover:bg-primary/90 text-white font-bold uppercase rounded-sm shadow-md" asChild>
+          <Button
+            variant="default"
+            size="sm"
+            className="ml-4 bg-primary hover:bg-primary/90 text-white font-bold uppercase rounded-sm shadow-md"
+            asChild
+          >
             <Link href="/contact">Get Quote</Link>
           </Button>
         </nav>
@@ -87,9 +96,9 @@ export function Navigation() {
                 href={link.href}
                 className={cn(
                   "px-4 py-3 text-sm font-medium rounded-md transition-colors uppercase",
-                  location === link.href 
-                    ? "bg-primary/10 text-primary font-bold" 
-                    : "hover:bg-muted text-foreground"
+                  location === link.href
+                    ? "bg-primary/10 text-primary font-bold"
+                    : "hover:bg-muted text-foreground",
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -97,10 +106,14 @@ export function Navigation() {
               </Link>
             ))}
             <div className="pt-4 border-t border-border mt-2">
-               <div className="flex flex-col space-y-2 text-sm text-muted-foreground px-4">
-                 <span className="flex items-center gap-2"><Phone className="h-4 w-4" /> +30 2102482659</span>
-                 <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> info@alkiepe.gr</span>
-               </div>
+              <div className="flex flex-col space-y-2 text-sm text-muted-foreground px-4">
+                <span className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" /> +30 231000000
+                </span>
+                <span className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" /> info@yannos.gr
+                </span>
+              </div>
             </div>
           </nav>
         </div>
