@@ -36,7 +36,6 @@ export function Navigation() {
           </div>
         </div>
       </div>
-
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 group">
@@ -44,7 +43,7 @@ export function Navigation() {
              A
            </div>
            <div className="flex flex-col">
-             <span className="font-display font-bold text-xl leading-none tracking-tight text-secondary">ALKI</span>
+             <span className="font-display font-bold text-xl leading-none tracking-tight text-secondary">Yannos</span>
              <span className="text-xs text-muted-foreground font-semibold tracking-widest">ASFALTIKA</span>
            </div>
         </Link>
@@ -78,7 +77,6 @@ export function Navigation() {
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
-
       {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden border-t border-border bg-background absolute w-full shadow-xl animate-in slide-in-from-top-5">
