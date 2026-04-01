@@ -1,0 +1,7 @@
+[1G[0K⠙[1G[0K
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+[1G[0K⠙[1G[0K12:28:31 PM [express] serving on port 5000
+12:28:49 PM [express] GET /api/services 200 in 14ms :: [{"id":1,"title":"Asphalt Production","description":"High-quality asphalt mixtures produced in our state-of-the-art facilities.","imageUrl":"https://images.unsplash.com/photo-1578326224388-c703b413158e?auto=format&fit=crop&q=80","slug":"asphalt-production"},{"id":2,"title":"Road Construction","description":"Complete road construction services from earthworks to final paving.","imageUrl":"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80","slug":"road-construction"},{"id":3,"title":"Paving Works","description":"Professional paving for highways, parking lots, and private roads.","imageUrl":"https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80","slug":"paving-works"}]
+12:28:49 PM [express] GET /api/projects 200 in 20ms :: [{"id":1,"title":"National Highway Expansion","description":"Widening and resurfacing of 50km of national highway.","location":"Attica, Greece","completionDate":"2023","imageUrl":"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80"},{"id":2,"title":"Airport Runway Resurfacing","description":"Specialized high-durability asphalt for airport runway.","location":"Thessaloniki","completionDate":"2022","imageUrl":"https://images.unsplash.com/photo-1578326224388-c703b413158e?auto=format&fit=crop&q=80"}]

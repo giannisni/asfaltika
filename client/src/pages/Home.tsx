@@ -24,7 +24,7 @@ export default function Home() {
         {/* unsplash: asphalt road construction machine sunset */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url('/images/highway-construction.jpg')` }}
         />
 
         <div className="container mx-auto px-4 z-20 relative text-center md:text-left">
@@ -179,7 +179,7 @@ export default function Home() {
               <div className="absolute -inset-4 border-2 border-primary/30 rounded-sm translate-x-4 translate-y-4" />
               {/* unsplash: construction team meeting site */}
               <img 
-                src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1997&auto=format&fit=crop" 
+                src="/images/construction-worker.jpg" 
                 alt="Construction Site Meeting" 
                 className="rounded-sm shadow-2xl w-full relative z-10 grayscale hover:grayscale-0 transition-all duration-500"
               />

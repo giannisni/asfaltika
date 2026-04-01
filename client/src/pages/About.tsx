@@ -19,7 +19,7 @@ export default function About() {
         <div
           className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop')`,
+            backgroundImage: `url('/images/construction-site.jpg')`,
           }}
         />
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -61,13 +61,13 @@ export default function About() {
           <div className="grid grid-cols-2 gap-4">
             {/* unsplash: construction worker portrait */}
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop"
+              src="/images/architect.jpg"
               className="rounded-sm shadow-lg w-full h-64 object-cover"
               alt="Construction Worker"
             />
             {/* unsplash: road rollers */}
             <img
-              src="https://images.unsplash.com/photo-1578330766324-733ad3b97b0a?q=80&w=2070&auto=format&fit=crop"
+              src="/images/road-roller.jpg"
               className="rounded-sm shadow-lg w-full h-64 object-cover mt-12"
               alt="Road Roller"
             />

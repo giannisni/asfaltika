@@ -62,7 +62,7 @@ export function Navigation() {
                 "px-4 py-2 text-sm font-medium transition-all duration-200 uppercase tracking-wide rounded-sm hover:text-primary",
                 location === link.href
                   ? "text-primary border-b-2 border-primary bg-primary/5"
-                  : "text-secondary-foreground/80 hover:bg-muted",
+                  : "text-secondary hover:bg-muted",
               )}
             >
               {link.label}
