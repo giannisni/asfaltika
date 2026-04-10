@@ -12,8 +12,8 @@
   --background: 0 0% 100%;
   --foreground: 220 5% 27%; /* #414347 dark grey text */
 
-  --primary: 30 85% 50%; /* #EC8E1A safety orange */
-  --primary-foreground: 0 0% 100%;
+  --primary: 54 93% 50%; /* #f5dc0a logo yellow */
+  --primary-foreground: 220 65% 34%; /* #1e3d8f logo navy */
 
   --secondary: 220 12% 20%; /* #2a2d3a dark navy */
   --secondary-foreground: 0 0% 100%;
@@ -29,7 +29,7 @@
 
   --border: 0 0% 85%;
   --input: 0 0% 91%;
-  --ring: 30 85% 50%;
+  --ring: 54 93% 50%;
 
   --radius: 0.25rem;
 }
@@ -37,8 +37,8 @@
 .dark {
   --background: 222 47% 11%;
   --foreground: 210 40% 98%;
-  --primary: 30 85% 50%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 54 93% 50%;
+  --primary-foreground: 220 65% 34%;
 }
 
 @layer base {
@@ -46,9 +46,10 @@
     @apply text-foreground antialiased;
     font-family: var(--font-body);
     background-color: #e8e6e1;
-    background-image: url('/images/concrete-texture.jpg');
-    background-size: 600px;
+    background-image: url('/images/concrete2.png');
+    background-size: 1536px auto;
     background-repeat: repeat;
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {

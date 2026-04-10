@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f0eee9]">
       <div className="bg-[#2a2d3a] pt-32 pb-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">
@@ -171,9 +171,9 @@ export default function Contact() {
                     {t("contact.address")}
                   </h4>
                   <p className="text-lg">
-                    123 XARILAOU,
+                    Περγάμου 5,
                     <br />
-                    Industrial Zone, Thessaloniki, Greece
+                    Αθήνα 171 21
                   </p>
                 </div>
               </div>
@@ -186,8 +186,7 @@ export default function Contact() {
                   <h4 className="font-bold text-sm tracking-wider text-gray-400 mb-1">
                     {t("contact.phone")}
                   </h4>
-                  <p className="text-lg">+30 2310 0000000</p>
-                  <p className="text-lg">+30 2310 0000000</p>
+                  <p className="text-lg">+30 210 932 7755</p>
                 </div>
               </div>
 
@@ -199,7 +198,7 @@ export default function Contact() {
                   <h4 className="font-bold text-sm tracking-wider text-gray-400 mb-1">
                     Email
                   </h4>
-                  <p className="text-lg">info@yannos.gr</p>
+                  <p className="text-lg">info@paschalidis.gr</p>
                 </div>
               </div>
 

@@ -38,20 +38,15 @@ export function Navigation() {
           : "bg-transparent",
       )}
     >
-      {/* Top info bar - only visible when scrolled or not home */}
-      <div
-        className={cn(
-          "border-b border-white/10 py-1.5 px-4 text-xs hidden md:block transition-all duration-300",
-          scrolled || !isHome ? "opacity-100" : "opacity-70",
-        )}
-      >
+      {/* Top info bar - always dark */}
+      <div className="bg-[#2a2d3a] border-b border-white/10 py-1.5 px-4 text-xs hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex space-x-6 text-gray-400">
             <span className="flex items-center gap-2">
-              <Phone className="h-3 w-3 text-[#e8941a]" /> +30 231000000
+              <Phone className="h-3 w-3 text-[#f5dc0a]" /> +30 210 932 7755
             </span>
             <span className="flex items-center gap-2">
-              <Mail className="h-3 w-3 text-[#e8941a]" /> info@yannos.gr
+              <Mail className="h-3 w-3 text-[#f5dc0a]" /> info@paschalidis.gr
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -68,12 +63,12 @@ export function Navigation() {
       </div>
 
       {/* Main nav */}
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           <img
             src="/images/logo.jpg"
             alt="Yannos Asfaltika"
-            className="h-12 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </Link>
 
@@ -85,7 +80,7 @@ export function Navigation() {
               className={cn(
                 "relative px-4 py-2 text-base font-medium transition-colors duration-200",
                 location === link.href
-                  ? "text-[#e8941a] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-[#e8941a]"
+                  ? "text-[#f5dc0a] after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-[#f5dc0a]"
                   : "text-gray-300 hover:text-white",
               )}
             >
@@ -95,7 +90,7 @@ export function Navigation() {
           <Button
             variant="default"
             size="default"
-            className="ml-4 bg-[#e8941a] hover:bg-[#d4830f] text-white font-semibold rounded-sm px-6"
+            className="ml-4 bg-[#f5dc0a] hover:bg-[#d4c009] text-[#1e3d8f] font-bold rounded-sm px-6"
             asChild
           >
             <Link href="/contact">{t("nav.getQuote")}</Link>
@@ -129,7 +124,7 @@ export function Navigation() {
                 className={cn(
                   "px-4 py-3 text-sm font-medium rounded transition-colors",
                   location === link.href
-                    ? "text-[#e8941a] bg-white/5"
+                    ? "text-[#f5dc0a] bg-white/5"
                     : "text-gray-300 hover:bg-white/5 hover:text-white",
                 )}
                 onClick={() => setIsOpen(false)}
@@ -140,10 +135,10 @@ export function Navigation() {
             <div className="pt-4 border-t border-white/10 mt-2">
               <div className="flex flex-col space-y-2 text-sm text-gray-500 px-4">
                 <span className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> +30 231000000
+                  <Phone className="h-4 w-4" /> +30 210 932 7755
                 </span>
                 <span className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" /> info@yannos.gr
+                  <Mail className="h-4 w-4" /> info@paschalidis.gr
                 </span>
               </div>
             </div>

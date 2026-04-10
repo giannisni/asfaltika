@@ -20,7 +20,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f0eee9]">
       <div className="bg-[#2a2d3a] pt-32 pb-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">{t("projects.title")}</h1>

@@ -15,7 +15,7 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f0eee9]">
       <div className="bg-[#2a2d3a] pt-32 pb-20 text-white relative overflow-hidden">
         <div
           className="absolute inset-0 z-0 opacity-15 bg-cover bg-center"
@@ -36,10 +36,10 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionHeader title={t("about.ourStory")} />
-              <div className="prose prose-lg text-gray-500">
-                <p className="mb-6">{t("about.story1")}</p>
-                <p className="mb-6">{t("about.story2")}</p>
-                <p>{t("about.story3")}</p>
+              <div className="prose prose-lg text-[#3a3d45]">
+                <p className="mb-6 leading-relaxed">{t("about.story1")}</p>
+                <p className="mb-6 leading-relaxed">{t("about.story2")}</p>
+                <p className="leading-relaxed">{t("about.story3")}</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -59,10 +59,10 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 my-24 border-y border-gray-100 py-12">
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#e8941a] mb-2">
+                <div className="text-4xl md:text-5xl font-bold text-[#f5dc0a] mb-2">
                   {stat.value}
                 </div>
-                <div className="text-[#495866] font-medium tracking-wide text-sm">
+                <div className="text-[#3a3d45] font-medium tracking-wide text-sm">
                   {stat.label}
                 </div>
               </div>
@@ -74,17 +74,17 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Target className="h-12 w-12 text-[#e8941a]" />,
+                  icon: <Target className="h-12 w-12 text-[#f5dc0a]" />,
                   title: t("about.quality"),
                   desc: t("about.qualityDesc"),
                 },
                 {
-                  icon: <ShieldCheck className="h-12 w-12 text-[#e8941a]" />,
+                  icon: <ShieldCheck className="h-12 w-12 text-[#f5dc0a]" />,
                   title: t("about.safety"),
                   desc: t("about.safetyDesc"),
                 },
                 {
-                  icon: <Users className="h-12 w-12 text-[#e8941a]" />,
+                  icon: <Users className="h-12 w-12 text-[#f5dc0a]" />,
                   title: t("about.partnership"),
                   desc: t("about.partnershipDesc"),
                 },
@@ -100,7 +100,7 @@ export default function About() {
                     <h3 className="text-xl font-bold text-[#2a2d3a] mb-4">
                       {value.title}
                     </h3>
-                    <p className="text-gray-500 leading-relaxed">
+                    <p className="text-[#3a3d45] leading-relaxed">
                       {value.desc}
                     </p>
                   </CardContent>
