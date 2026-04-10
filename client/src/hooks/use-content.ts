@@ -1,86 +1,65 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { api, type InsertContactMessage } from "@shared/routes";
+import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
+import {
+  services,
+  products,
+  projects,
+  equipment,
+  certifications,
+} from "@/data/content";
+import type { ContactMessage } from "@/data/types";
 
-// Services
+// Web3Forms public access key - replace with your own from https://web3forms.com
+const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
+// Static data hooks - no network calls, instant return.
+// Kept as hooks so page components don't need to change.
 export function useServices() {
-  return useQuery({
-    queryKey: [api.services.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.services.list.path);
-      if (!res.ok) throw new Error("Failed to fetch services");
-      return api.services.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: services, isLoading: false };
 }
 
-// Products
 export function useProducts() {
-  return useQuery({
-    queryKey: [api.products.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.products.list.path);
-      if (!res.ok) throw new Error("Failed to fetch products");
-      return api.products.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: products, isLoading: false };
 }
 
-// Projects
 export function useProjects() {
-  return useQuery({
-    queryKey: [api.projects.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.projects.list.path);
-      if (!res.ok) throw new Error("Failed to fetch projects");
-      return api.projects.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: projects, isLoading: false };
 }
 
-// Equipment
 export function useEquipment() {
-  return useQuery({
-    queryKey: [api.equipment.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.equipment.list.path);
-      if (!res.ok) throw new Error("Failed to fetch equipment");
-      return api.equipment.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: equipment, isLoading: false };
 }
 
-// Certifications
 export function useCertifications() {
-  return useQuery({
-    queryKey: [api.certifications.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.certifications.list.path);
-      if (!res.ok) throw new Error("Failed to fetch certifications");
-      return api.certifications.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: certifications, isLoading: false };
 }
 
-// Contact Form Mutation
+// Contact form — posts to Web3Forms (no backend needed)
 export function useSubmitContact() {
   const { toast } = useToast();
   return useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      const res = await fetch(api.contact.submit.path, {
-        method: api.contact.submit.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+    mutationFn: async (data: ContactMessage) => {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          from_name: "Paschalidis Website",
+        }),
       });
-      
-      if (!res.ok) {
-        if (res.status === 400) {
-          const error = api.contact.submit.responses[400].parse(await res.json());
-          throw new Error(error.message);
-        }
-        throw new Error("Failed to submit message");
+
+      const result = await res.json();
+      if (!result.success) {
+        throw new Error(result.message || "Failed to submit message");
       }
-      return api.contact.submit.responses[201].parse(await res.json());
+      return result;
     },
     onSuccess: () => {
       toast({
@@ -89,7 +68,7 @@ export function useSubmitContact() {
         variant: "default",
       });
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
         description: error.message,

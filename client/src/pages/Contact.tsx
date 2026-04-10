@@ -1,10 +1,17 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  insertContactMessageSchema,
-  type InsertContactMessage,
-} from "@shared/schema";
+import { z } from "zod";
 import { useSubmitContact } from "@/hooks/use-content";
+import type { ContactMessage } from "@/data/types";
+
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email"),
+  subject: z.string().min(1, "Subject is required"),
+  message: z.string().min(1, "Message is required"),
+});
+
+type InsertContactMessage = ContactMessage;
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,7 +32,7 @@ export default function Contact() {
   const { t } = useLanguage();
 
   const form = useForm<InsertContactMessage>({
-    resolver: zodResolver(insertContactMessageSchema),
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       name: "",
       email: "",
