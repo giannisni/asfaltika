@@ -1,25 +1,27 @@
 import { useCertifications } from "@/hooks/use-content";
 import { SectionHeader } from "@/components/SectionHeader";
 import { BadgeCheck, FileCheck } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function Certifications() {
   const { data: certifications, isLoading } = useCertifications();
+  const { t } = useLanguage();
 
-  if (isLoading) return <div className="flex h-screen items-center justify-center">Loading...</div>;
+  if (isLoading) return <div className="flex h-screen items-center justify-center">{t("common.loading")}</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-secondary py-20 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-4">Quality Assurance</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Certified excellence and compliance with international standards</p>
+    <div className="min-h-screen">
+      <div className="bg-[#2a2d3a] pt-32 pb-20 text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-white">{t("certs.title")}</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">{t("certs.subtitle")}</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          <SectionHeader title="Our Certifications" centered />
-          
+          <SectionHeader title={t("certs.ourCerts")} centered />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {certifications?.map((cert) => (
               <div key={cert.id} className="bg-white p-8 rounded-sm shadow-md border-l-4 border-primary flex items-start gap-6 hover:shadow-lg transition-shadow">
@@ -28,8 +30,8 @@ export default function Certifications() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-secondary mb-1">{cert.title}</h3>
-                  <div className="text-sm text-gray-500 font-medium mb-3 uppercase tracking-wide">
-                    {cert.issuingBody} • {cert.year}
+                  <div className="text-sm text-gray-500 font-medium mb-3 tracking-wide">
+                    {cert.issuingBody} &bull; {cert.year}
                   </div>
                   {cert.imageUrl && (
                     <div className="mt-4 border border-gray-200 p-2 inline-block bg-gray-50 rounded-sm">
@@ -43,10 +45,9 @@ export default function Certifications() {
 
           <div className="mt-16 bg-white p-8 rounded-sm shadow-sm text-center">
              <FileCheck className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-             <h3 className="text-lg font-bold text-secondary mb-2">Quality Policy</h3>
+             <h3 className="text-lg font-bold text-secondary mb-2">{t("certs.qualityPolicy")}</h3>
              <p className="text-muted-foreground max-w-2xl mx-auto">
-               We are committed to maintaining the highest standards of quality management, environmental responsibility, 
-               and occupational health and safety in all our operations.
+               {t("certs.qualityPolicyDesc")}
              </p>
           </div>
         </div>

@@ -1,57 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: 'Chakra Petch', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Industrial Color Palette */
-  /* Asphalt Grey - Primary Dark */
+  /* Construction Site Palette */
   --background: 0 0% 100%;
-  --foreground: 220 13% 18%; /* Dark Grey Text */
-  
-  --primary: 33 100% 50%; /* Safety Orange #FF8C00 */
+  --foreground: 220 5% 27%; /* #414347 dark grey text */
+
+  --primary: 30 85% 50%; /* #EC8E1A safety orange */
   --primary-foreground: 0 0% 100%;
-  
-  --secondary: 210 14% 28%; /* Asphalt Grey #3d4652 */
+
+  --secondary: 220 12% 20%; /* #2a2d3a dark navy */
   --secondary-foreground: 0 0% 100%;
-  
-  --muted: 210 20% 96%;
-  --muted-foreground: 215 16% 47%;
-  
-  --accent: 210 20% 96%;
-  --accent-foreground: 220 13% 18%;
-  
+
+  --muted: 40 5% 93%; /* warm light grey */
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 46 80% 55%; /* #e8c830 hard hat yellow */
+  --accent-foreground: 220 12% 20%;
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 33 100% 50%; /* Orange focus ring */
-  
-  --radius: 0.25rem; /* Sharp industrial corners */
+  --border: 0 0% 85%;
+  --input: 0 0% 91%;
+  --ring: 30 85% 50%;
+
+  --radius: 0.25rem;
 }
 
 .dark {
-  /* Future dark mode support if needed */
   --background: 222 47% 11%;
   --foreground: 210 40% 98%;
-  --primary: 33 100% 50%;
+  --primary: 30 85% 50%;
   --primary-foreground: 0 0% 100%;
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-family: var(--font-body);
+    background-color: #e8e6e1;
+    background-image: url('/images/concrete-texture.jpg');
+    background-size: 600px;
+    background-repeat: repeat;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-secondary uppercase;
+    @apply font-bold tracking-tight text-secondary;
   }
 }
 
@@ -59,7 +61,7 @@
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
   .clip-diagonal {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { LanguageProvider } from "@/hooks/use-language";
 import NotFound from "@/pages/not-found";
 
 // Pages
@@ -35,6 +36,7 @@ function Router() {
 
 function App() {
   return (
+    <LanguageProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="flex flex-col min-h-screen font-sans antialiased">
@@ -47,6 +49,7 @@ function App() {
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
+    </LanguageProvider>
   );
 }
 

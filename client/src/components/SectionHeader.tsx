@@ -10,15 +10,12 @@ interface SectionHeaderProps {
 export function SectionHeader({ title, subtitle, className, centered = false }: SectionHeaderProps) {
   return (
     <div className={cn("mb-12", centered && "text-center", className)}>
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary uppercase tracking-tight mb-3 relative inline-block">
+      <div className={cn("w-10 h-1 bg-[#e8941a] mb-4", centered && "mx-auto")} />
+      <h2 className="text-3xl md:text-4xl font-bold text-[#2a2d3a] tracking-tight mb-3">
         {title}
-        <span className={cn(
-          "absolute -bottom-2 h-1 bg-primary w-1/3",
-          centered ? "left-1/3" : "left-0"
-        )} />
       </h2>
       {subtitle && (
-        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+        <p className={cn("text-gray-500 mt-2 max-w-2xl text-lg", centered && "mx-auto")}>
           {subtitle}
         </p>
       )}
