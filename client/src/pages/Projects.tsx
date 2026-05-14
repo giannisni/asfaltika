@@ -35,7 +35,8 @@ export default function Projects() {
               key={f.key}
               variant={filter === f.key ? "default" : "outline"}
               onClick={() => setFilter(f.key)}
-              className={`rounded-sm font-bold ${filter === f.key ? 'bg-primary hover:bg-primary/90 text-white border-primary' : 'bg-white text-secondary border-gray-200'}`}
+              style={{ borderRadius: "12px" }}
+              className={`font-bold px-6 ${filter === f.key ? 'bg-[#f5dc0a] hover:bg-[#d4c009] text-[#1e3d8f] border-none' : 'bg-white text-[#2a2d3a] border-gray-200'}`}
             >
               {f.label}
             </Button>
@@ -44,7 +45,7 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects?.map((project) => (
-            <div key={project.id} className="bg-white rounded-sm shadow-md overflow-hidden hover:shadow-xl transition-all group">
+            <div key={project.id} style={{ borderRadius: "12px" }} className="bg-white shadow-card overflow-hidden hover:shadow-xl transition-all group">
               <div className="h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10" />
                 <img

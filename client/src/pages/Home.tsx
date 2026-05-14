@@ -40,7 +40,7 @@ export default function Home() {
               <div className="w-8 h-0.5 bg-[#f5dc0a] mt-2" />
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-[96px] font-black text-white leading-[1] mb-6" style={{ letterSpacing: "-2.4px" }}>
               {t("home.hero1")}<br />
               {t("home.hero2")}
             </h1>
@@ -104,7 +104,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredServices?.map((service) => (
-              <Card key={service.id} className="group border-none shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 bg-white rounded-none">
+              <Card key={service.id} style={{ borderRadius: "12px" }} className="group border-none shadow-card overflow-hidden hover:shadow-xl transition-all duration-300 bg-white">
                 <div className="h-56 overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10" />
                   <img
@@ -185,7 +185,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {featuredProjects?.map((project) => (
-              <div key={project.id} className="group relative h-80 overflow-hidden cursor-pointer">
+              <div key={project.id} style={{ borderRadius: "12px" }} className="group relative h-80 overflow-hidden cursor-pointer">
                 <img
                   src={project.imageUrl}
                   alt={project.title}

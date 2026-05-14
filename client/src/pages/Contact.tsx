@@ -152,7 +152,8 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isPending}
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-sm shadow-lg tracking-wide"
+                  style={{ borderRadius: "12px" }}
+                  className="w-full bg-[#f5dc0a] hover:bg-[#d4c009] text-[#1e3d8f] font-bold py-6 shadow-lg tracking-wide border-none"
                 >
                   {isPending ? t("contact.sending") : t("contact.send")}
                 </Button>

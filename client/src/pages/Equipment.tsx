@@ -21,7 +21,7 @@ export default function Equipment() {
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {equipment?.map((item) => (
-            <Card key={item.id} className="border-none bg-gray-50 shadow-sm overflow-hidden group">
+            <Card key={item.id} style={{ borderRadius: "12px" }} className="border-none bg-white shadow-card overflow-hidden group">
               <div className="h-64 bg-white p-6 flex items-center justify-center relative border-b border-gray-100">
                 <img
                   src={item.imageUrl}

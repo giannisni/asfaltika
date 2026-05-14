@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <img
-              src="/images/logo.jpg"
+              src="/images/pasx.jpeg"
               alt="Paschalidis"
               className="h-16 w-auto object-contain mb-6"
             />

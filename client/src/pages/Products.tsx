@@ -2,7 +2,6 @@ import { useProducts } from "@/hooks/use-content";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useLanguage } from "@/hooks/use-language";
 
@@ -24,7 +23,7 @@ export default function Products() {
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products?.map((product) => (
-            <Card key={product.id} className="group border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full rounded-sm overflow-hidden">
+            <Card key={product.id} style={{ borderRadius: "12px" }} className="group border-none shadow-card hover:shadow-xl transition-all duration-300 flex flex-col h-full overflow-hidden bg-white">
               <div className="h-64 overflow-hidden relative bg-gray-100">
                 <img
                   src={product.imageUrl}
@@ -47,9 +46,9 @@ export default function Products() {
               </CardContent>
               <CardFooter className="p-6 pt-0 bg-transparent border-t border-gray-100 mt-auto flex items-center justify-between">
                  <span className="text-xs font-bold text-gray-400 tracking-widest">{t("products.availableBulk")}</span>
-                 <Button variant="link" className="text-primary p-0 h-auto font-bold text-xs" asChild>
-                   <Link href="/contact">{t("products.requestQuote")}</Link>
-                 </Button>
+                 <Link href="/contact" className="text-[#f5dc0a] hover:text-[#d4c009] font-bold text-xs transition-colors">
+                   {t("products.requestQuote")}
+                 </Link>
               </CardFooter>
             </Card>
           ))}

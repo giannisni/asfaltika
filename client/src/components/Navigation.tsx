@@ -66,7 +66,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           <img
-            src="/images/logo.jpg"
+            src="/images/pasx.jpeg"
             alt="Yannos Asfaltika"
             className="h-16 w-auto object-contain"
           />
@@ -90,7 +90,8 @@ export function Navigation() {
           <Button
             variant="default"
             size="default"
-            className="ml-4 bg-[#f5dc0a] hover:bg-[#d4c009] text-[#1e3d8f] font-bold rounded-sm px-6"
+            style={{ borderRadius: "12px" }}
+            className="ml-4 bg-[#f5dc0a] hover:bg-[#d4c009] text-[#1e3d8f] font-bold px-6 border-none"
             asChild
           >
             <Link href="/contact">{t("nav.getQuote")}</Link>

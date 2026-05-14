@@ -50,11 +50,30 @@
     background-size: 1536px auto;
     background-repeat: repeat;
     background-attachment: fixed;
+    color: #414448;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight text-secondary;
+    @apply tracking-tight;
+    color: #414448;
+  }
+
+  h1 {
+    font-weight: 900;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -65,5 +84,10 @@
 
   .clip-diagonal {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  /* Card elevation from design system */
+  .shadow-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
   }
 }
